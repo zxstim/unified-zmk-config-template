@@ -17,4 +17,19 @@
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
+
+# Firmware for a Sofle on nice!nano controllers (ZMK v0.3, matching what the keyboard shipped with).
+# Each entry becomes one .uf2 file in the GitHub Actions build.
 ---
+include:
+  # Left half: runs the keymap and ZMK Studio (over USB). Studio's unlock step is off because the keymap has
+  # no &studio_unlock key.
+  - board: nice_nano_v2
+    shield: sofle_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+  - board: nice_nano_v2
+    shield: sofle_right
+  # Recovery only: flash to both halves to clear pairings and saved settings, then flash the normal firmware.
+  - board: nice_nano_v2
+    shield: settings_reset
