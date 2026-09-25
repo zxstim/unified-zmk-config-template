@@ -8,7 +8,8 @@ ZMK firmware for my Sofle (nice!nano controllers, ZMK v0.3), built by GitHub Act
     [zmkaid](../zmkaid), the on-screen layer overlay, can show the right layer.
   - RAISE's Undo / Cut / Copy / Paste send ⌘Z / ⌘X / ⌘C / ⌘V.
 - `config/sofle.conf`: OLED displays, encoders and RGB underglow on.
-- `build.yaml`: left half (with ZMK Studio), right half, and `settings_reset` for recovery.
+- `build.yaml`: left half (with ZMK Studio, and reporting the right half's battery to the Mac as a second
+  battery), right half, and `settings_reset` for recovery.
 
 ## Build
 
